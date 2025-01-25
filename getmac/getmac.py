@@ -125,7 +125,7 @@ OVERRIDE_PLATFORM = ""  # type: str
 
 # Force a specific method to be used for all lookups
 # Used for debugging and testing
-FORCE_METHOD = "ArpFile"  # type: str
+FORCE_METHOD = ""  # type: str
 
 # Get and cache the configured system PATH on import
 # The process environment does not change after a process is started
@@ -1276,6 +1276,7 @@ class DefaultIfaceFreeBsd(Method):
 #   Use a class attribute maybe? e.g. "score", then sort by score in cache
 METHODS = [
     # NOTE: CtypesHost is faster than ArpExe because of sub-process startup times :)
+    CtypesHost,
     ArpFile,
     ArpingHost,
     SysIfaceFile,
