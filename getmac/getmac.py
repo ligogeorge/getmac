@@ -125,7 +125,7 @@ OVERRIDE_PLATFORM = ""  # type: str
 
 # Force a specific method to be used for all lookups
 # Used for debugging and testing
-FORCE_METHOD = ""  # type: str
+FORCE_METHOD = "ArpFile"  # type: str
 
 # Get and cache the configured system PATH on import
 # The process environment does not change after a process is started
@@ -1806,7 +1806,7 @@ def get_mac_address(  # noqa: C901
             # probably a good idea.
 
             if not mac:
-                for arp_meth in ["CtypesHost", "ArpingHost"]:
+                for arp_meth in ["ArpingHost"]:
                     if FORCE_METHOD and FORCE_METHOD.lower() != arp_meth:
                         continue
 
